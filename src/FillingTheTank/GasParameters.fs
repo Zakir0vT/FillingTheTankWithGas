@@ -1,13 +1,23 @@
-﻿namespace FillingTheTank
+﻿
+namespace FillingTheTank
+
+open System
 
 //Природный газ близкий по составу к смеси "Северный поток"
 module Gas =
     //Параметры элемента газа
     [<Struct>]
     type GasElementParams(molarFraction: float, molarMass: float, criticalPressure: float, criticalTemperature: float) =
+        //Молярная доля
         member x.MolarFraction: float = molarFraction
+        
+        //Молярная масса
         member x.MolarMass: float = molarMass
+        
+        //Критическое давление
         member x.CriticalPressure: float = criticalPressure
+        
+        //Критическая температура 
         member x.CriticalTemperature: float = criticalTemperature
 
     //Состав газа
@@ -21,7 +31,7 @@ module Gas =
         | CarbonDioxide
         | Nitrogen
         
-    //Параметры газа
+    //Начальные параметры
     type InitialParameters  =
         //Изохорная теплоемкость газа, Дж/(кг · К)
         member x.IsochoricHeatCapacity = 1750.
@@ -55,3 +65,25 @@ module Gas =
         
         //Давление втекающего газа, Па
         member x.P1  = 25000000.
+        
+        //Давление втекающего газа, Па
+        member x.GasConstant  = 8314.4598
+        
+    //Параметры газовой смеси
+    type MixtureParameters() =
+        //Молярная масса смеси
+        member val MolarMassOfTheMixture = 0. with get, set
+        
+        //Газовая постоянная смеси
+        member val GasConstantOfTheMixture = 0. with get, set
+        
+        //Давление критическое смеси
+        member val CriticalPressureOfTheMixture = 0. with get, set
+        
+        //Температура критическая смеси
+        member val CriticalTemperatureOfTheMixture = 0. with get, set
+        
+        //Параметры a и b для уравнения Редлиха-Квонга
+        member val ParameterA = 0. with get, set
+        member val ParameterB = 0. with get, set
+        

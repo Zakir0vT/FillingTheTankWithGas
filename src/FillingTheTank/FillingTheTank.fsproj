@@ -6,7 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="GasElement.fs" />
+    <Compile Include="GasParameters.fs" />
+    <Compile Include="ConstantParameters.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
