@@ -1,8 +1,6 @@
 ﻿
 namespace FillingTheTank
 
-open System
-
 //Природный газ близкий по составу к смеси "Северный поток"
 module Gas =
     //Параметры элемента газа
@@ -32,7 +30,7 @@ module Gas =
         | Nitrogen
         
     //Начальные параметры
-    type InitialParameters  =
+    type InitialParameters()  =
         //Изохорная теплоемкость газа, Дж/(кг · К)
         member x.IsochoricHeatCapacity = 1750.
         
@@ -86,4 +84,7 @@ module Gas =
         //Параметры a и b для уравнения Редлиха-Квонга
         member val ParameterA = 0. with get, set
         member val ParameterB = 0. with get, set
+        
+        //Параметр бетта критическая        
+        member val CriticalBetta = 0. with get, set
         

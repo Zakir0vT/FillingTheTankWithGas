@@ -7,7 +7,7 @@
 
   <ItemGroup>
     <Compile Include="GasParameters.fs" />
-    <Compile Include="ConstantParameters.fs" />
+    <Compile Include="Mixture.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
 
