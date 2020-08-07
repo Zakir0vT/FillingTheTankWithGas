@@ -2,7 +2,7 @@
 namespace FillingTheTank
 
 //Природный газ близкий по составу к смеси "Северный поток"
-module Gas =
+module GasParameters =
     //Параметры элемента газа
     [<Struct>]
     type GasElementParams(molarFraction: float, molarMass: float, criticalPressure: float, criticalTemperature: float) =

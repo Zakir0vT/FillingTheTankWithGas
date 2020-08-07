@@ -1,6 +1,7 @@
-﻿open FillingTheTank
-open FillingTheTank.Gas
-open System
+﻿open FillingTheTank.GasParameters
+open FillingTheTank.MixtureParameters
+open FillingTheTank.NinjectExtension
+open Ninject
 
 [<EntryPoint>]
 let main argv =
@@ -16,8 +17,10 @@ let main argv =
           GasElementName.Nitrogen, GasElementParams(0.008176, 28.014, 33.94, 126.25) ]
         |> dict
 
-    let mixt = Mixture(MixtureParameters(), InitialParameters())
-
+    use kernel = new StandardKernel()
+    kernel.ConfigureContainer
+    
+    let mixt = kernel.Get<Mixture>()
     mixt.Calculate mixture
     
     0
