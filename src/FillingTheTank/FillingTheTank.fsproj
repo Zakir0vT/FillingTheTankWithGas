@@ -9,6 +9,7 @@
     <Compile Include="GasParameters.fs" />
     <Compile Include="Mixture.fs" />
     <Compile Include="RungeKutta.fs" />
+    <Compile Include="DichotomyMethod.fs" />
     <Compile Include="Extensions.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>

@@ -1,5 +1,6 @@
 ﻿namespace FillingTheTank
 
+open FillingTheTank.DichotomyMethod
 open FillingTheTank.GasParameters
 open FillingTheTank.MixtureParameters
 open Ninject
@@ -13,3 +14,4 @@ module NinjectExtension =
             kernel.Bind<MixtureParameters>().ToSelf().InSingletonScope |> ignore
             kernel.Bind<Mixture>().ToSelf().InSingletonScope |> ignore
             kernel.Bind<RK6>().ToSelf().InTransientScope |> ignore
+            kernel.Bind<Density>().ToSelf().InTransientScope |> ignore
